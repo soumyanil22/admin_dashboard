@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import AddNewDeliverAddress from './components/AddNewDeliverAddress.jsx';
 import axios from 'axios';
 import InvoicesPage from './InvoicesPage.jsx';
+import GetDeliveryStatus from './GetDeliveryStatus.jsx';
+import UpdateDeliveryStatus from './UpdateDeliveryStatus.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +28,24 @@ const router = createBrowserRouter([
   {
     path: '/invoices',
     element: <InvoicesPage />,
+    errorElement: (
+      <div className="w-100 h-100 d-flex justify-content-center align-items-center">
+        <h1>404 Not Found</h1>
+      </div>
+    ),
+  },
+  {
+    path: '/delivery/status',
+    element: <GetDeliveryStatus />,
+    errorElement: (
+      <div className="w-100 h-100 d-flex justify-content-center align-items-center">
+        <h1>404 Not Found</h1>
+      </div>
+    ),
+  },
+  {
+    path: '/update/delivery/status',
+    element: <UpdateDeliveryStatus />,
     errorElement: (
       <div className="w-100 h-100 d-flex justify-content-center align-items-center">
         <h1>404 Not Found</h1>
